@@ -27,6 +27,15 @@ public partial class MainViewModel : ObservableObject
         //add our item
         Text = string.Empty;
     }
+
+    [RelayCommand]
+    void Delete(string s)
+    {
+        if (Items.Contains(s))
+        {
+            Items.Remove(s);
+        }
+    }
 }
 
 //public class MainViewModel : INotifyPropertyChanged
