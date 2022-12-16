@@ -28,27 +28,17 @@
                         ItemsSource="{Binding Items}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="{x:Type x:String}">
-                    <SwipeView>
-                        <SwipeView.RightItems>
-                            <SwipeItems>
-                                <SwipeItem Text="Delete"
-                                   BackgroundColor="Red"
-                                   Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}"
-                                   CommandParameter="{Binding .}"/>
-                            </SwipeItems>
-                        </SwipeView.RightItems>
-                        <Grid Padding="0,5">
-                            <Frame>
-                                <Label Text="{Binding .}"
+                    <Grid Padding="0,5">
+                        <Frame>
+                            <Label Text="{Binding .}"
                                    FontSize="20"/>
-                            </Frame>
-                            <Button Text="Delete"
-                                   BackgroundColor="Red"
-                                   Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}"
-                                   CommandParameter="{Binding .}"
-                                   HorizontalOptions="End"/>
-                        </Grid>
-                    </SwipeView>
+                        </Frame>
+                        <Button Text="Delete"
+                                BackgroundColor="Red"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}"
+                                CommandParameter="{Binding .}"
+                                HorizontalOptions="End"/>
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
